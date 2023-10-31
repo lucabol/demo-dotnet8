@@ -1,0 +1,15 @@
+# AOT
+. dotnet new list
+. dotnet new webapiaot -o Aot 
+. talk about code in vim (C# features, C# source generators, ... )
+. run it via console
+. vscode, do it thorugh vscode (c# toolkit)
+. set breakpoint and show it hit, step into code generated
+
+# BLAZOR
+. VSCode show components
+. Run demo in console
+. Comment out RenderModeInteractiveAuto, show it doesn't update
+
+# C#
+. Go thorough features

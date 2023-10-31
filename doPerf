@@ -1,0 +1,1 @@
+hyperfine --warmup 5 -n Aot Aot/bin/Release/net8.0/linux-x64/publish/Aot -n NoAot Aot/bin/Release/net8.0/linux-x64/Aot
