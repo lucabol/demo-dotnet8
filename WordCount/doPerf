@@ -1,9 +1,29 @@
 CountCmd="bin/Release/net8.0/linux-x64/publish/count Clarissa_Harlowe"
 WcCmd="wc Clarissa_Harlowe/*"
+CwCmd="./cw Clarissa_Harlowe/*"
 
+echo WC
 $CountCmd
+echo
+echo -e "\nCOUNT"
 $WcCmd
+echo -e "\nCW"
+$CwCmd
 
 echo
+hyperfine --warmup 10 -n Count  "$CountCmd" -n Wc "$WcCmd" -n Cw "$CwCmd"
 
-hyperfine --warmup 10 -n Count  "$CountCmd" -n Wc "$WcCmd"
+echo -e "\nSIZE"
+exa -alF cw bin/Release/net8.0/linux-x64/publish/count /usr/bin/wc
+
+echo -e "\nFILE"
+ldd bin/Release/net8.0/linux-x64/publish/count cw /usr/bin/wc
+
+echo -e "\nLINES OF CODE"
+
+echo -e "\nCw"
+wc -l ../../cw/src/*.rs
+echo -e "\nCount"
+wc -l *.cs
+echo -e "\nWc"
+echo "982 https://raw.githubusercontent.com/coreutils/coreutils/master/src/wc.c"
