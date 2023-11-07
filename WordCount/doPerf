@@ -1,0 +1,9 @@
+CountCmd="bin/Release/net8.0/linux-x64/publish/count Clarissa_Harlowe"
+WcCmd="wc Clarissa_Harlowe/*"
+
+$CountCmd
+$WcCmd
+
+echo
+
+hyperfine --warmup 10 -n Count  "$CountCmd" -n Wc "$WcCmd"
