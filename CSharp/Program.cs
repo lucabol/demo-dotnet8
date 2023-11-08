@@ -3,7 +3,7 @@ using Rating = (string name,int rating);
 
 B("Alias any type");
 Rating[] ratings = [("Luca", 0), ("Jonny", 3)];
-Rating firstRating = ratings.First();
+Rating firstRating = ratings[0];
 WriteLine($"Luca == {firstRating.name}");
 
 B("Interceptors");
@@ -70,8 +70,7 @@ public class MyClass {
 namespace MyInterceptors {
     public static class InterceptorClass {
         [System.Runtime.CompilerServices.InterceptsLocation("/home/lucabol/dev/demo-dotnet8/CSharp/Program.cs", line: 11, character: 9)]
-        public static void InterceptorMethod(this MyClass myClass)
-        {
+        public static void InterceptorMethod(this MyClass myClass) {
             WriteLine("Hello from the interceptor !");
         }
     }
