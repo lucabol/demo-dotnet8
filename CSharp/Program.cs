@@ -20,15 +20,12 @@ B("Primary Constructors");
 Bigger b = new(2, 3, new ConsolePrinter());
 b.PrintBigger();
 
-B("Colletion expressions");
+B("Collection expressions");
 int[] row0                 = [1, 2, 3];
 ReadOnlySpan<int> row1     = [4, 5, 6];
 IEnumerable<int> row2      = [7, 8, 9];
 List<int> single           = [..row0, ..row1, ..row2];
-foreach(var s in single) Write($"{s} ");
-
-var avg = Avg([1,2,3,4,5,6,7,8,9]);
-WriteLine($"\nAverage: {avg} == {Avg(single)}");
+foreach(var s in single) Write($"{s} "); WriteLine();
 
 B("Default lambda parameters");
 var inc = (int source, int by = 1) => source + by;
